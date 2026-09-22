@@ -1,0 +1,7 @@
+ste
+*.o
+*.out
+.cache/
+compile_commands.json
+.vscode/
+.idea/
