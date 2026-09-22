@@ -18,6 +18,12 @@ On Debian/Ubuntu:
 sudo apt install build-essential libncurses-dev
 ```
 
+On Arch linux:
+
+```sh
+sudo pacman -S base-devel ncurses
+```
+
 Then:
 
 ```sh
