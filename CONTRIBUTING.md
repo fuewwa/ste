@@ -81,8 +81,7 @@ Match the existing code exactly. In particular:
 - Keep the diff focused on the stated goal. Unrelated formatting or
   reordering changes make review harder and will likely be asked to be
   split out or dropped.
-- Update `README.md` if the change affects usage, keybindings, build steps,
-  or the project layout.
+- Update `README.md` if the change affects usage, keybindings, or something else that used before.
 
 ## Reporting bugs
 
