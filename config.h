@@ -6,3 +6,4 @@ static const char save = 's';
 static const int escape = 27;
 
 static const int tab = 4;
+static const bool lines = true;

@@ -18,6 +18,7 @@ public:
 private:
     void render();
     void renderStatus(int screenRows, int screenCols);
+    int gutterWidth() const;
 
     void handleGeneral(int ch);
     void handleWrite(int ch);

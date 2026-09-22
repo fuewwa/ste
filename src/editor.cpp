@@ -3,6 +3,7 @@
 #include "../config.h"
 
 #include <ncurses.h>
+#include <string>
 
 Editor::Editor(const std::string& path)
     : filename(path),
@@ -157,6 +158,17 @@ void Editor::clampCursor() {
     }
 }
 
+int Editor::gutterWidth() const {
+    if (!lines) {
+        return 0;
+    }
+    int digits = static_cast<int>(std::to_string(buffer.lineCount()).size());
+    if (digits < 2) {
+        digits = 2;
+    }
+    return digits + 1;
+}
+
 void Editor::adjustViewport(int screenRows, int screenCols) {
     if (cursorRow < rowOffset) {
         rowOffset = cursorRow;
@@ -194,8 +206,14 @@ void Editor::render() {
     getmaxyx(stdscr, screenRows, screenCols);
     screenRows -= 1;
 
+    int gutter = gutterWidth();
+    int textCols = screenCols - gutter;
+    if (textCols < 1) {
+        textCols = 1;
+    }
+
     clampCursor();
-    adjustViewport(screenRows, screenCols);
+    adjustViewport(screenRows, textCols);
 
     erase();
 
@@ -205,18 +223,24 @@ void Editor::render() {
             break;
         }
 
+        if (gutter > 0) {
+            attron(A_DIM);
+            mvprintw(row, 0, "%*d ", gutter - 1, fileRow + 1);
+            attroff(A_DIM);
+        }
+
         const std::string& text = buffer.line(fileRow);
         if (colOffset < static_cast<int>(text.size())) {
             std::string visible = text.substr(colOffset);
-            if (static_cast<int>(visible.size()) > screenCols) {
-                visible.resize(screenCols);
+            if (static_cast<int>(visible.size()) > textCols) {
+                visible.resize(textCols);
             }
-            mvprintw(row, 0, "%s", visible.c_str());
+            mvprintw(row, gutter, "%s", visible.c_str());
         }
     }
 
     renderStatus(screenRows, screenCols);
 
-    move(cursorRow - rowOffset, cursorCol - colOffset);
+    move(cursorRow - rowOffset, gutter + cursorCol - colOffset);
     refresh();
 }
