@@ -7,6 +7,7 @@ namespace terminal {
 
 void init() {
     initscr();
+    set_escdelay(25);
     raw();
     noecho();
     keypad(stdscr, TRUE);
