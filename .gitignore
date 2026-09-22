@@ -1,8 +1,17 @@
+# out
 ste
 *.o
+*.exe
+*.pdb
 *.out
+*.a
 .cache/
+build/
 compile_commands.json
+
+# ide
 .vscode/
 .idea/
+
+# debug
 test
