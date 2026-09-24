@@ -3,7 +3,7 @@
 `ste` is a minimal terminal text editor with a two-mode workflow inspired by
 modal editors, but stripped down to the smallest useful set of behavior.
 Configuration is done the same way [dwm](https://dwm.suckless.org/) does it:
-by editing `config.h` and recompiling, there is no runtime configuration.
+by editing `config.h` and recompiling, there is no runtime configuration. The default settings live in `config.def.h`.
 
 ## Building
 
@@ -29,6 +29,10 @@ Then:
 ```sh
 make
 ```
+
+If `config.h` does not exist, `make` creates it by copying `config.def.h`.
+If it already exists, it is used as is, so your changes are never overwritten.
+To reset to the defaults, delete `config.h` and run `make` again.
 
 This produces a single binary, `ste`, in the project root.
 
