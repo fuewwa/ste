@@ -18,3 +18,4 @@ tests/
 
 # other
 config.h
+.DS_Store
