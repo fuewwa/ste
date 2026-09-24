@@ -82,6 +82,7 @@ Match the existing code exactly. In particular:
   reordering changes make review harder and will likely be asked to be
   split out or dropped.
 - Update `README.md` if the change affects usage, keybindings, or something else that used before.
+- Please use labels, they can help us to know a priority of the problem!
 
 ## Reporting bugs
 
