@@ -1,0 +1,43 @@
+name: Accessibility
+description: Report an accessibility problem or request an accessibility improvement
+title: "[a11y]: "
+labels: ["accessibility"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping make this project usable for everyone.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type
+      options:
+        - Barrier in existing behavior
+        - Missing accessibility feature
+        - Documentation is not accessible
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What is the problem?
+      description: Describe what is hard or impossible to do.
+    validations:
+      required: true
+  - type: textarea
+    id: assistive
+    attributes:
+      label: Assistive technology
+      description: Screen reader, magnifier, switch device, voice control, high contrast, and so on.
+      placeholder: Orca 46, keyboard only
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Version, operating system, compositor.
+    validations:
+      required: true

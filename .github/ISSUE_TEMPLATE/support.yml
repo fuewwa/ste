@@ -1,0 +1,51 @@
+name: Support for devices, OS, or compositors
+description: Report a compatibility problem or request support for a platform
+title: "[support]: "
+labels: ["support"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type
+      options:
+        - Something does not work on my setup
+        - Request support for a new platform
+        - Confirm that a setup works
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Project version
+      placeholder: v1.2.3 or a commit hash
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: Arch Linux, Fedora 41, FreeBSD 14, macOS 15
+    validations:
+      required: true
+  - type: input
+    id: compositor
+    attributes:
+      label: Compositor or window manager
+      placeholder: Sway 1.10, Hyprland, GNOME Shell 47, KDE Plasma 6
+  - type: input
+    id: device
+    attributes:
+      label: Device or hardware
+      placeholder: Laptop model, GPU, input device
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happens and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or command output
+      render: shell

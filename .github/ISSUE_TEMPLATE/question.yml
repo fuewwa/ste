@@ -1,0 +1,28 @@
+name: Question
+description: Ask a question about usage or behavior
+title: "[question]: "
+labels: ["question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+      description: Documentation you read, commands you ran, results you saw.
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Version, operating system, compositor.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I read the documentation and searched existing issues
+          required: true

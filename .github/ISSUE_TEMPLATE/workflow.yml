@@ -1,0 +1,36 @@
+name: Workflow
+description: Suggest a change to development, build, release, or contribution workflow
+title: "[workflow]: "
+labels: ["workflow"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Build system
+        - CI
+        - Testing
+        - Release process
+        - Contribution process
+        - Documentation process
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current situation
+      description: What is slow, fragile, confusing, or missing today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact on contributors and users

@@ -1,0 +1,43 @@
+name: Scripts and patches
+description: Share or request a user patch or an automation script
+title: "[scripts]: "
+labels: ["scripts"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type
+      options:
+        - Share a patch
+        - Share an automation script
+        - Request a patch or script
+        - Problem with an existing patch or script
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: What does the patch or script do, or what should it do?
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: Patch or script
+      description: Paste the diff or script, or link to it.
+      render: shell
+  - type: input
+    id: base
+    attributes:
+      label: Base version
+      description: Version or commit the patch or script applies to.
+      placeholder: v1.2.3 or a commit hash
+  - type: textarea
+    id: usage
+    attributes:
+      label: How to apply or run it
+  - type: textarea
+    id: notes
+    attributes:
+      label: Known limitations
