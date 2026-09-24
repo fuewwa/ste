@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=ste
+GenericName=Text Editor
+Comment=Minimal terminal text editor
+Exec=sh -c "exec ste \\"\\${1:-untitled.txt}\\"" sh %f
+Icon=accessories-text-editor
+Terminal=true
+Categories=Utility;TextEditor;
+MimeType=text/plain;
+Keywords=text;editor;terminal;

@@ -16,9 +16,13 @@ clean:
 	rm -f $(OBJ) $(BIN)
 
 install: $(BIN)
-	install -Dm755 $(BIN) $(PREFIX)/bin/$(BIN)
+	install -Dm755 $(BIN) $(DESTDIR)$(PREFIX)/bin/$(BIN)
+	install -Dm644 assets/$(BIN).desktop $(DESTDIR)$(PREFIX)/share/applications/$(BIN).desktop
+	-update-desktop-database $(DESTDIR)$(PREFIX)/share/applications 2>/dev/null
 
 uninstall:
-	rm -f $(PREFIX)/bin/$(BIN)
+	rm -f $(DESTDIR)$(PREFIX)/bin/$(BIN)
+	rm -f $(DESTDIR)$(PREFIX)/share/applications/$(BIN).desktop
+	-update-desktop-database $(DESTDIR)$(PREFIX)/share/applications 2>/dev/null
 
 .PHONY: all clean install uninstall
