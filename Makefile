@@ -6,6 +6,11 @@ PREFIX = /usr/local
 
 all: $(BIN)
 
+config.h:
+	cp config.def.h $@
+
+$(OBJ): config.h
+
 $(BIN): $(OBJ)
 	g++ $(OBJ) -o $(BIN) -lncurses
 
