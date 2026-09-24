@@ -7,7 +7,7 @@ before opening a pull request.
 ## Philosophy first
 
 - `ste` follows the `dwm` approach to configuration: behavior that can be a
-  compile-time constant in `config.h` should be, instead of a runtime
+  compile-time constant in `config.h` and `config.def.h` should be, instead of a runtime
   option, a flag, or a config file format.
 - Two modes only, `general` and `write`. Do not propose a third mode; if
   something needs a new mode, it probably belongs in a different editor.
@@ -38,7 +38,7 @@ There is no automated test suite yet. Manually verify at minimum:
 
 - opening an existing file and a non-existent file
 - switching between `general` and `write` modes
-- every hotkey defined in `config.h`
+- every hotkey defined in `config.def.h`
 - saving and reopening the file to confirm content round-trips correctly
 - resizing the terminal while `ste` is running
 
