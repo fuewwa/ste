@@ -15,3 +15,6 @@ compile_commands.json
 
 # debug
 tests/
+
+# other
+config.h
