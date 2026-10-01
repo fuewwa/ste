@@ -1,14 +1,18 @@
 # out
 ste
-*.o
-*.exe
-*.pdb
-*.out
-*.a
-*.so
 .cache/
 build/
 compile_commands.json
+
+# windows
+*.pdb
+*.exe
+
+# linux
+*.o
+*.a
+*.so
+*.out
 
 # ide
 .vscode/
