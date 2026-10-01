@@ -49,7 +49,7 @@ Match the existing code exactly. In particular:
 - C++17, no exceptions used for control flow, no RTTI.
 - 4 spaces for indentation, no tabs, no trailing whitespace.
 - Classes are `PascalCase` (`Editor`, `Buffer`). Functions, methods, and
-  variables are `camelCase`. Constants in `config.h` are `camelCase` as
+  variables are `camelCase`. Constants in `config.def.h` are `camelCase` as
   well, matching the existing entries.
 - No source or header file is prefixed with the project name. Use
   `editor.cpp`, not `ste_editor.cpp`. Same rule for functions and classes:
