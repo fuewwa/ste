@@ -19,3 +19,9 @@ tests/
 # other
 config.h
 .DS_Store
+
+# useless
+*.mp3
+*.mp4
+*.ogg
+*.wav
