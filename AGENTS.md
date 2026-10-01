@@ -1,6 +1,4 @@
----
-title: AGENTS
----
+# Agents
 
 This document describes the conventions and rules for agents (human or
 AI) working on the **ste** project.
