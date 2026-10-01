@@ -5,6 +5,7 @@ ste
 *.pdb
 *.out
 *.a
+*.so
 .cache/
 build/
 compile_commands.json
