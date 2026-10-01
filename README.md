@@ -1,5 +1,7 @@
 # ste
 
+![Screen](docs/screenshot.png)
+
 `ste` is a minimal terminal text editor with a two-mode workflow inspired by
 modal editors, but stripped down to the smallest useful set of behavior.
 Configuration is done the same way [dwm](https://dwm.suckless.org/) does it:
