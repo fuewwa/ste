@@ -25,6 +25,7 @@ tests/
 # other
 config.h
 .DS_Store
+PKGBUILD
 
 # useless
 *.mp3
